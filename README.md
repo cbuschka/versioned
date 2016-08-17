@@ -1,12 +1,11 @@
 # versioned (Version Editor) - a version number tool
 
-versioned (or versioned) is a simple command line tool to work with version 
+versioned is a simple command line tool to work with version 
 numbers on the command line. Features include
 
-- check if version number satisfies the version number format
-- remove a "-SNAPSHOT" suffix
-- calculate next release version
-- calculate next snapshot version.
+- check if version number matches the version number format
+- removal of "-SNAPSHOT" suffix
+- calculation of next release or development versions.
 
 ## Version number formats
 
@@ -14,33 +13,38 @@ versioned supports semantic versions of the form 1.2.3-SNAPSHOT for now. This
 format is known from maven (a popular java build tool) and is called 'mvn'. The
 format option `-f mvn` can be omitted as for now `mvn` is the default.
 
+### Test if version does not match format
 ```
 versioned -f mvn -c isVersion foo
 false
 ```
 
+### Test if version matches format
 ```
 versioned -f mvn -c isVersion 1
 true
 ```
 
+### Test if version is a development version
 ```
 versioned -f mvn -c isSnapshot 1-SNAPSHOT
 true
 ```
-
+### Test if version is a release version
 ```
 versioned -f mvn -c isRelease 1-SNAPSHOT
 false
 ```
 
+### Calculate next release version based on development version
 ```
 versioned -f mvn -c nextRelease 1.2.3-SNAPSHOT
 1.2.3
 ```
 
+### Calculate next development version based on release version
 ```
-versioned -f mvn -c nextSnapshot 1.2.3-SNAPSHOT
+versioned -f mvn -c nextSnapshot 1.2.3
 1.2.4-SNAPSHOT
 ```
 
