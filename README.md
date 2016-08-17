@@ -16,6 +16,10 @@ format is known from maven (a popular java build tool) and is called 'mvn'. The
 format option `-f mvn` can be omitted as for now `mvn` is the default. More formats
 to come...
 
+## Build status
+
+[![Build Status](https://travis-ci.org/cbuschka/versioned.svg)](https://travis-ci.org/cbuschka/versioned)
+
 ## Examples
 
 ### Test if version matches format
