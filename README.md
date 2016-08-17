@@ -10,8 +10,38 @@ numbers on the command line. Features include
 
 ## Version number formats
 
-versioned supports semantic versions of the form 1.2.3-SNAPSHOT for now, more
-to come...
+versioned supports semantic versions of the form 1.2.3-SNAPSHOT for now. This
+format is known from maven (a popular java build tool) and is called mvn.
+
+```
+versioned -f mvn -c isVersion foo
+false
+```
+
+```
+versioned -f mvn -c isVersion 1
+true
+```
+
+```
+versioned -f mvn -c isSnapshot 1-SNAPSHOT
+true
+```
+
+```
+versioned -f mvn -c isRelease 1-SNAPSHOT
+false
+```
+
+```
+versioned -f mvn -c nextRelease 1.2.3-SNAPSHOT
+1.2.3
+```
+
+```
+versioned -f mvn -c nextSnapshot 1.2.3-SNAPSHOT
+1.2.4-SNAPSHOT
+```
 
 ## License
 
