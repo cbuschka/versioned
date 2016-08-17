@@ -6,6 +6,8 @@ versioned is a command line tool to work with version numbers. Features include
 - removal of "-SNAPSHOT" suffix
 - calculation of next release or development versions.
 
+versioned is written in Python.
+
 ## Version number formats
 
 versioned supports semantic versions of the form 1.2.3-SNAPSHOT for now. This
