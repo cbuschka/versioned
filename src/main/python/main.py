@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
-from version import Version
+from versioned.version import Version
 import sys
 
 if __name__ == '__main__':
