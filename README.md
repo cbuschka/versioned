@@ -52,4 +52,4 @@ versioned -f mvn -c nextSnapshot 1.2.3
 
 MIT License
 
-[License]{LICENSE.txt}
+[License](LICENSE.txt)
