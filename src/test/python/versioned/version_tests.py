@@ -1,25 +1,22 @@
 import unittest
 
-from versioned.version import Version
+from versioned.version import VersionBuilder
 
 class VersionTestCase(unittest.TestCase):
   def setUp(self):
-    self.nothing = None
-
-  def tearDown(self):
-    self.nothing = None
+    self.versionBuilder = VersionBuilder()
 
   def testIsVersionOnNonVersion(self):
-    self.assertFalse(Version("FOO").isVersion())
+    self.assertFalse(self.versionBuilder.build("FOO").isVersion())
     
   def testIsSnapshotOnSnapshotVersion(self):
-    self.assertTrue(Version('1-SNAPSHOT').isSnapshot())
+    self.assertTrue(self.versionBuilder.build('1-SNAPSHOT').isSnapshot())
 
   def testIsSnapshotOnReleaseVersion(self):
-    self.assertFalse(Version('1').isSnapshot())
+    self.assertFalse(self.versionBuilder.build('1').isSnapshot())
 
   def testIsVersionWithFullVersionInfixAndSnapshot(self):
-    self.assertTrue(Version('1.2.3-RC-4-SNAPSHOT').isVersion())
+    self.assertTrue(self.versionBuilder.build('1.2.3-RC-4-SNAPSHOT').isVersion())
 
 if __name__ == '__main__':
     unittest.main()

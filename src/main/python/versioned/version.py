@@ -4,7 +4,11 @@
 import sys
 import re
 
-class Version:
+class VersionBuilder:
+  def build(self, version):
+    return MvnVersion(version)
+
+class MvnVersion:
   def __init__(self, version):
     self.version_pattern = re.compile('^\d+([\-\.]\w+)*$')
     self.version_split_pattern = re.compile('([\.\-]+)')
