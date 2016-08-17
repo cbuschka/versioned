@@ -1,7 +1,6 @@
 # versioned (Version Editor) - a version number tool
 
-versioned is a command line tool to work with version numbers 
-on the command line. Features include
+versioned is a command line tool to work with version numbers. Features include
 
 - check if version number matches the version number format
 - removal of "-SNAPSHOT" suffix
