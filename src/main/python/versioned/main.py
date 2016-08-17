@@ -3,25 +3,31 @@
 
 from version import VersionBuilder
 import sys
+from getopt import gnu_getopt
 
 if __name__ == '__main__':
   versionBuilder = VersionBuilder()
 
-  if len(sys.argv) == 1:
-    print sys.argv[0] + " isVersion|isSnapshot|rmSnapshot|nextVersion|nextSnapshot <value>"
-    sys.exit(1)
-  elif len(sys.argv) > 1 and sys.argv[1] == 'isVersion':
-    print 'true' if versionBuilder.build(sys.argv[2]).isVersion() else 'false'
-  elif len(sys.argv) > 1 and sys.argv[1] == 'isSnapshot':
-    print 'true' if versionBuilder.build(sys.argv[2]).isSnapshot() else 'false'
-  elif len(sys.argv) > 1 and sys.argv[1] == 'removeSnapshot':
-    print versionBuilder.build(sys.argv[2]).removeSnapshot().str()
-  elif len(sys.argv) > 1 and sys.argv[1] == 'nextRelease':
-    print versionBuilder.build(sys.argv[2]).nextRelease().str()
-  elif len(sys.argv) > 1 and sys.argv[1] == 'nextSnapshot':
-    print versionBuilder.build(sys.argv[2]).nextSnapshot().str()
+  command = ''
+  (opts, commandArgs) = gnu_getopt(sys.argv[1:], "f:c:", [])
+  for (optName, optValue) in opts:
+    if optName == '-f':
+      versionBuilder.setFormat(optValue)
+    if optName == '-c':
+      command = optValue
+
+  if len(commandArgs) > 0 and command == 'isVersion':
+    print 'true' if versionBuilder.build(commandArgs[0]).isVersion() else 'false'
+  elif len(commandArgs) > 0 and command == 'isRelease':
+    print 'true' if versionBuilder.build(commandArgs[0]).isRelease() else 'false'
+  elif len(commandArgs) > 0 and command == 'isSnapshot':
+    print 'true' if versionBuilder.build(commandArgs[0]).isSnapshot() else 'false'
+  elif len(commandArgs) > 0 and command == 'nextRelease':
+    print versionBuilder.build(commandArgs[0]).nextRelease().str()
+  elif len(commandArgs) > 0 and command == 'nextSnapshot':
+    print versionBuilder.build(commandArgs[0]).nextSnapshot().str()
   else:
-    print sys.argv[0] + ": unknown command '{}'".format(sys.argv[1]);
+    print sys.argv[0] + ": unknown command '{}'".format(command);
     sys.exit(1)
 
 sys.exit(0)
