@@ -11,7 +11,8 @@ numbers on the command line. Features include
 ## Version number formats
 
 versioned supports semantic versions of the form 1.2.3-SNAPSHOT for now. This
-format is known from maven (a popular java build tool) and is called mvn.
+format is known from maven (a popular java build tool) and is called 'mvn'. The
+format option `-f mvn` can be omitted as for now `mvn` is the default.
 
 ```
 versioned -f mvn -c isVersion foo

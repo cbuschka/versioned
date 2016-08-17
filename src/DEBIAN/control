@@ -1,0 +1,16 @@
+Package: version-utils
+Version: 2
+Section: development
+Priority: optional
+Architecture: all
+Essential: no
+Depends: python
+Pre-Depends: 
+Recommends: 
+Suggests: 
+Installed-Size: __SIZE__
+Maintainer: Cornelius Buschka <c.buschka@gmx.de>
+Conflicts: 
+Replaces: 
+Provides:
+Description: Utilities for version number processing on command line.
