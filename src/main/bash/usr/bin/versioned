@@ -2,8 +2,6 @@
 
 BASE_DIR=$(cd `dirname $0`; pwd)
 
-PYTHONPATH=/usr/share/versioned/:$PYTHONPATH
-
-python -B /usr/share/versioned/versioned/versioned.py $*
+python -B /usr/share/versioned/versioned/main.py $*
 
 exit $?
