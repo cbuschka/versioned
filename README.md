@@ -8,11 +8,15 @@ versioned is a command line tool to work with version numbers. Features include
 
 versioned is written in Python.
 
-## Version number formats
+
+## Supported version number formats
 
 versioned supports semantic versions of the form 1.2.3-SNAPSHOT for now. This
 format is known from maven (a popular java build tool) and is called 'mvn'. The
-format option `-f mvn` can be omitted as for now `mvn` is the default.
+format option `-f mvn` can be omitted as for now `mvn` is the default. More formats
+to come...
+
+## Examples
 
 ### Test if version matches format
 ```
