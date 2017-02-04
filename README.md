@@ -1,8 +1,6 @@
-# versioned (Version Editor)
+# versioned (Version Editor) - a version number tool
 
 ![Written in Python](https://img.shields.io/badge/python-2.7-yellow.svg) [![Build Status](https://travis-ci.org/cbuschka/versioned.svg)](https://travis-ci.org/cbuschka/versioned) [![Test Coverage](https://codecov.io/gh/cbuschka/versioned/branch/master/graph/badge.svg)](https://codecov.io/gh/cbuschka/versioned) [![Release](https://img.shields.io/github/release/cbuschka/versionedsvg)](https://github.com/cbuschka/versioned/releases/latest) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-
-## version number tool
 
 versioned is a command line tool to work with version numbers. Features include
 
